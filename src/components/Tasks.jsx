@@ -1,12 +1,14 @@
 import React from "react";
 import Task from "./Task";
 
-const Tasks = ({ tasks }) => {
-	console.log(tasks);
+import '../styles/Tasks.css';
+
+const Tasks = ({ tasks, handleTaskStatus }) => {
 	return (
 		<>
+			<div className="tasks-title">Lista de tarefas:</div>
 			{tasks.map((task) => (
-				<Task task={task} />
+				<Task key={task.id} task={task} handleTaskStatus={handleTaskStatus} />
 			))}
 		</>
 	);

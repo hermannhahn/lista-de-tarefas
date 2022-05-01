@@ -1,0 +1,8 @@
+.tasks-title {
+    margin-top: 30px;
+    flex:auto;
+    width: 100%;
+    text-align: left;
+    color: #eee;
+    font-size: 14px;
+}

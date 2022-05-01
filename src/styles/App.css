@@ -41,8 +41,9 @@
   max-width: 500px;
   margin: 30px auto;
   overflow: auto;
+  background-color: #282c34;
   min-height: 300px;
-  border: 2px solid #203d77;
+  border: 2px solid #eeeeee;
   padding: 30px;
   border-radius: 10px;
 }
