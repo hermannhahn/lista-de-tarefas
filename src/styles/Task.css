@@ -1,11 +1,10 @@
 .task-li {
     background-color: rgb(231, 231, 231);
     margin: 8px 0;
+    height: 10px;
     padding: 15px 20px;
     display: flex;
     border-radius: 5px;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
     justify-content: space-between;
     color: rgb(11, 93, 160);
     align-items: center;
@@ -13,12 +12,14 @@
 
 .task-desc {
     margin: 30px auto;
-    margin-top: -9px;
+    margin-top: -8px;
     overflow: auto;
     background-color: #282c34;
     min-height: 300px;
     border: 2px solid #eeeeee;
     border-top: none;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
     padding: 30px;
 }
 

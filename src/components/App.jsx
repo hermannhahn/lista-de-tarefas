@@ -44,14 +44,20 @@ const App = () => {
 		setTasks(newTask);
 	};
 
+	const closeAllTaskDescriptions = () => {
+		const newTask = tasks.map(task => { return task.showdesc = false; });
+		setTasks(newTask);
+	};
+
+
 	const handleTaskDescription = (taskId) => {
 		const newTask = tasks.map((task) => {
 			if (task.id === taskId) return { ...task, showdesc: !task.showdesc }
 			return task;
 		});
+		closeAllTaskDescriptions();
 		setTasks(newTask);
 	};
-
 
 	return (
 		<>

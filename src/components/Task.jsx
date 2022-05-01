@@ -11,10 +11,24 @@ const Task = ({ task, handleTaskStatus, handleTaskRemove, handleTaskDescription 
 		<>
 			<li
 				className="task-li"
-				style={task.completed ? { borderTop: "6px solid chartreuse", paddingTop: "9px" } : {}}
+				style={
+					task.completed ? {
+						borderTop: "6px solid chartreuse",
+						paddingTop: "9px"
+					}:
+						task.showdesc ? {
+							borderBottomLeftRadius: "0px",
+							borderBottomRightRadius: "0px",
+							backgroundColor: "#2395e0",
+							color: "#eee"							
+						} : {}
+				}
 			>
 
-				<div className="task-title" onClick={() => handleTaskDescription(task.id)}>
+				<div
+					className="task-title"
+					onClick={() => handleTaskDescription(task.id)}
+				>
 					{task.title}
 				</div>
 
