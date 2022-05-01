@@ -15,9 +15,19 @@ const App = () => {
 		const newTask = [...tasks, {
 			title: taskTitle,
 			id: uuidv4(),
-			completed: false
+			completed: false,
+			showdesc: false,
+			description: ""
 		}];
 
+		setTasks(newTask);
+	}
+
+	const handleTaskUpdateDesc = (taskId, taskDesc) => {
+		const newTask = tasks.map((task) => {
+			if (task.id === taskId) return { ...task, description: taskDesc }
+			return task;
+		});
 		setTasks(newTask);
 	}
 
@@ -29,12 +39,26 @@ const App = () => {
 		setTasks(newTask);
 	};
 
+	const handleTaskRemove = (taskId) => {
+		const newTask = tasks.filter(task => task.id !== taskId);
+		setTasks(newTask);
+	};
+
+	const handleTaskDescription = (taskId) => {
+		const newTask = tasks.map((task) => {
+			if (task.id === taskId) return { ...task, showdesc: !task.showdesc }
+			return task;
+		});
+		setTasks(newTask);
+	};
+
+
 	return (
 		<>
 			<h2>Lista de Tarefas</h2>
 			<div className="container">
 				<AddTask handleTaskAdd={handleTaskAdd} />
-				<Tasks tasks={tasks} handleTaskStatus={handleTaskStatus} />
+				<Tasks tasks={tasks} handleTaskStatus={handleTaskStatus} handleTaskRemove={handleTaskRemove} handleTaskUpdateDesc={handleTaskUpdateDesc} handleTaskDescription={handleTaskDescription} />
 			</div>
 		</>
 	);

@@ -1,18 +1,30 @@
 import React from "react";
 import "../styles/Task.css";
 
-const Task = ({ task, handleTaskStatus }) => {
+const Task = ({ task, handleTaskStatus, handleTaskRemove, handleTaskDescription }) => {
+	let statusClass = "";
+	let statusText = "";
+	let descClass = "";
+	if (!task.completed) { statusClass = "complete-task"; statusText = "V"; } else { statusClass = "uncomplete-task"; statusText = "U"; }
+	if (!task.showdesc) { descClass = "hidden"; } else { descClass = "task-desc"; }
 	return (
 		<>
 			<li
 				className="task-li"
-				style={	task.completed ? { borderLeft: "6px solid chartreuse" } : {} }
-				onClick={() => handleTaskStatus(task.id)}
+				style={task.completed ? { borderTop: "6px solid chartreuse", paddingTop: "9px" } : {}}
 			>
-				<span className="task-title">
+
+				<div className="task-title" onClick={() => handleTaskDescription(task.id)}>
 					{task.title}
-				</span>
+				</div>
+
+				<div className="buttons-container">
+					<button className={statusClass} onClick={() => handleTaskStatus(task.id)}>{statusText}</button>
+					<button className="remove-task" onClick={() => handleTaskRemove(task.id)}>X</button>
+				</div>
 			</li>
+
+			<div className={descClass}>{task.description}</div>
 		</>
 	);
 };
