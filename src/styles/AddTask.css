@@ -1,28 +1,46 @@
 .add-task-container {
-    margin: 15px 0;
-    width: 100%;
-    display: flex;
+	margin: 15px 0;
+	width: 100%;
+	display: flex;
 }
 
 .add-task-input {
-    height:  40px;
-    padding: 0 10px;
-    border-radius: 5px;
-    border: none;
-    flex: 2;
-    background-color: rgba(255, 255, 255, 0.89);
-    color: rgb(49, 49, 49);
-    font-size: 16px;
+	height: 40px;
+	padding: 0 10px;
+	border-radius: 5px;
+	border: none;
+	flex: 2;
+	background-color: rgba(255, 255, 255, 0.89);
+	color: rgb(49, 49, 49);
+	font-size: 16px;
 }
 
 .add-task-button-container {
-    margin-left: 10px;
+	margin-left: 10px;
 }
 
 .add-task-title {
-    flex:auto;
-    width: 100%;
-    text-align: left;
-    color: #eee;
-    font-size: 14px;
+	flex: auto;
+	width: 100%;
+	text-align: left;
+	color: #eee;
+	font-size: 14px;
+}
+
+.add-task-button {
+	background-color: rgb(49, 97, 201);
+	height: 40px;
+	padding: 0 0px;
+	border-radius: 5px;
+	width: 30px;
+	font-size: 16px;
+	color: #eee;
+	font-weight: bold;
+	text-align: center;
+	cursor: pointer;
+	border: none;
+}
+.add-task-button:hover {
+	background-color: rgb(67, 201, 49);
+	color: #eee;
 }

@@ -1,76 +1,45 @@
 .task-li {
-    background-color: rgb(231, 231, 231);
-    margin: 8px 0;
-    height: 10px;
-    padding: 15px 20px;
-    display: flex;
-    border-radius: 5px;
-    justify-content: space-between;
-    color: rgb(11, 93, 160);
-    align-items: center;
-}
-
-.task-desc {
-    margin: 30px auto;
-    margin-top: -8px;
-    overflow: auto;
-    background-color: #282c34;
-    min-height: 300px;
-    border: 2px solid #eeeeee;
-    border-top: none;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    padding: 30px;
-}
-
-.task-desc-title {
-    margin-top: 30px;
-    flex:auto;
-    width: 100%;
-    text-align: left;
-    color: #eee;
-    font-size: 14px;
+	background-color: rgb(231, 231, 231);
+	margin: 8px 0;
+	padding: 15px 20px;
+	display: flex;
+	border-radius: 5px;
+	justify-content: space-between;
+	color: #282c34;
+	align-items: center;
+	text-shadow: #282c34;
 }
 
 .task-li:hover {
-    background-color: rgba(231, 231, 231, 0.89);
+	background-color: rgba(231, 231, 231, 0.89);
 }
 
 .task-title {
-    font-weight: bold;
-    cursor: pointer;
+	font-weight: bold;
+	cursor: pointer;
 }
 
+.task-desc-title {
+	margin-top: 30px;
+	flex: auto;
+	width: 100%;
+	text-align: left;
+	color: #eee;
+	font-size: 14px;
+}
+
+.task-desc {
+	margin: 30px auto;
+	margin-top: -8px;
+	overflow: auto;
+	background-color: #282c34;
+	border: 2px dashed #eeeeee;
+	border-top: none;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	padding: 30px;
+}
 
 .buttons-container {
-    font-size: 18px;
-}
-
-.remove-task {
-    width: 30px;
-    height: 30px;
-    background-color: rgb(187, 0, 0);
-    color: rgb(255, 255, 255);
-    margin-left: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-.complete-task {
-    width: 30px;
-    height: 30px;
-    background-color: rgb(2, 221, 20);
-    color: rgb(255, 255, 255);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-.uncomplete-task {
-    width: 30px;
-    height: 30px;
-    background-color: rgb(216, 216, 216);
-    color: rgb(71, 71, 71);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+	font-size: 18px;
 }
