@@ -2,7 +2,6 @@ import React from 'react';
 import '../styles/Task.css';
 
 const NoTasks = ({ total }) => {
-	console.log(total);
 	if (total < 1) {
 		return (
 			<li className='task-li'>

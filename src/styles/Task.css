@@ -1,4 +1,4 @@
-.task-li {
+.task-div {
 	background-color: rgb(231, 231, 231);
 	margin: 8px 0;
 	padding: 15px 20px;
@@ -8,6 +8,7 @@
 	color: #282c34;
 	align-items: center;
 	text-shadow: #282c34;
+	cursor: move;
 }
 
 .task-li:hover {
@@ -28,7 +29,7 @@
 	font-size: 14px;
 }
 
-.task-desc {
+.task-description {
 	margin: 30px auto;
 	margin-top: -8px;
 	overflow: auto;

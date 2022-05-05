@@ -1,18 +1,25 @@
 import React, { useState } from 'react';
 import Header from './Header';
 
-import { Helmet } from 'react-helmet';
 import { v4 as uuidv4 } from 'uuid';
 import Tasks from './Tasks';
 import AddTask from './AddTask';
 import Container from '@mui/material/Container';
+import * as CONSTANTS from '../constants';
+import NoTasks from './NoTasks';
 
 import '../styles/App.css';
 
+const title = document.getElementsByTagName('title')[0];
+title.innerHTML = CONSTANTS.PAGE_TITLE;
+
 const App = () => {
 	const jsonData = require('../api/database.json');
+	const prop = 'id';
+	const sortData = new Map(
+		[...jsonData.entries()].sort((a, b) => b[1][prop] - a[1][prop])
+	);
 	const [tasks, setTasks] = useState(jsonData);
-
 	const handleTaskAdd = (taskTitle) => {
 		const newTask = [
 			...tasks,
@@ -29,7 +36,7 @@ const App = () => {
 	};
 
 	const handleTaskUpdateDesc = (taskId, taskDesc) => {
-		const newTask = tasks.map((task) => {
+		const newTask = tasks.get((task) => {
 			if (task.id === taskId) return { ...task, description: taskDesc };
 			return task;
 		});
@@ -67,26 +74,21 @@ const App = () => {
 
 	return (
 		<>
-			<Helmet>
-				<title>Lista de Tarefas (React)</title>
-				<meta name='keywords' content='HTML,CSS,JavaScript' />
-				<meta name='viewport' content='initial-scale=1, width=device-width' />
-				<meta
-					name='description'
-					content='Ideas page using react helmet very easy to implement '
-				/>
-			</Helmet>
 			<Container maxWidth='sm'>
 				<Header />
 				<div className='container'>
 					<AddTask handleTaskAdd={handleTaskAdd} />
-					<Tasks
-						tasks={tasks}
-						handleTaskStatus={handleTaskStatus}
-						handleTaskRemove={handleTaskRemove}
-						handleTaskUpdateDesc={handleTaskUpdateDesc}
-						handleTaskDescription={handleTaskDescription}
-					/>
+					<div className='tasks'>
+						<div className='tasks-title'>Lista de tarefas:</div>
+						<NoTasks total={tasks.length} />
+						<Tasks
+							tasks={tasks}
+							handleTaskStatus={handleTaskStatus}
+							handleTaskRemove={handleTaskRemove}
+							handleTaskUpdateDesc={handleTaskUpdateDesc}
+							handleTaskDescription={handleTaskDescription}
+						/>
+					</div>
 				</div>
 			</Container>
 		</>

@@ -1,6 +1,5 @@
 import React from 'react';
 import Task from './Task';
-import NoTasks from './NoTasks';
 import '../styles/Tasks.css';
 
 const Tasks = ({
@@ -10,22 +9,17 @@ const Tasks = ({
 	handleTaskUpdateDesc,
 	handleTaskDescription,
 }) => {
-	return (
-		<>
-			<div className='tasks-title'>Lista de tarefas:</div>
-			<NoTasks total={tasks.length} />
-			{tasks.map((task) => (
-				<Task
-					key={task.id}
-					task={task}
-					handleTaskStatus={handleTaskStatus}
-					handleTaskRemove={handleTaskRemove}
-					handleTaskUpdateDesc={handleTaskUpdateDesc}
-					handleTaskDescription={handleTaskDescription}
-				/>
-			))}
-		</>
-	);
+	return tasks.map((task) => (
+		<div className='box' key={task.id}>
+			<Task
+				task={task}
+				handleTaskStatus={handleTaskStatus}
+				handleTaskRemove={handleTaskRemove}
+				handleTaskUpdateDesc={handleTaskUpdateDesc}
+				handleTaskDescription={handleTaskDescription}
+			/>
+		</div>
+	));
 };
 
 export default Tasks;
