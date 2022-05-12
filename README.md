@@ -2,6 +2,10 @@
 
 Este projeto foi criado com [Create React App](https://github.com/facebook/create-react-app).
 
+## Demo
+
+[https://lista-de-tarefas-drab-tau.vercel.app/](https://lista-de-tarefas-drab-tau.vercel.app/)
+
 ## Comandos
 
 Para iniciar o projeto:
