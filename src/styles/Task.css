@@ -8,11 +8,34 @@
 	color: #282c34;
 	align-items: center;
 	text-shadow: #282c34;
-	cursor: move;
 }
 
-.task-li:hover {
+.task-div:hover {
 	background-color: rgba(231, 231, 231, 0.89);
+}
+
+.drag-task {
+	cursor: move;
+	border: none;
+	background-color: rgba(255, 255, 255, 0);
+}
+.buttons {
+	cursor: pointer;
+	border: none;
+	background-color: rgba(255, 255, 255, 0);
+}
+.buttons-container {
+	font-size: 18px;
+	display: flex;
+}
+
+.no-tasks {
+	margin: auto;
+	padding: 15px 20px;
+	border-radius: 5px;
+	color: #ebebeb;
+	align-items: center;
+	text-align: center;
 }
 
 .task-title {
@@ -39,8 +62,4 @@
 	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;
 	padding: 30px;
-}
-
-.buttons-container {
-	font-size: 18px;
 }
