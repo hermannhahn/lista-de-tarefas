@@ -1,8 +1,8 @@
 # Lista de Tarefas
 
-Este projeto foi criado com [Create React App](https://github.com/facebook/create-react-app).
+Lista de tarefas simples em React.
 
-## Demo
+## Preview
 
 [https://lista-de-tarefas-drab-tau.vercel.app/](https://lista-de-tarefas-drab-tau.vercel.app/)
 
@@ -20,7 +20,7 @@ Abra [http://localhost:3000](http://localhost:3000) em seu navegador para ver.
 Este é um projeto de lista de tarefas em React, mas pode ser alterado para outras finalidades.
 
 Nele você pode adicionar novas tarefas, marcar como finalizadas, apagar tarefas e reordenar arrastando as tarefas.
-As informações estão sendo salvas em "localStorage", ou seja, em seu navegador.
+As informações estão sendo salvas em "localStorage".
 
 ### ToDo
 
