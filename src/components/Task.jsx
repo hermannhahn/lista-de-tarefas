@@ -58,7 +58,8 @@ const Task = ({
 		}),
 	});
 	drag(drop(ref));
-	const opacity = isDragging ? 0.5 : 1;
+	const opacity = isDragging ? 0 : 1;
+	const cursor = isDragging ? 'grabbing' : 'grab';
 	return (
 		<>
 			<div
@@ -67,7 +68,7 @@ const Task = ({
 				id={id}
 				ref={ref}
 				data-handler-id={handlerId}
-				style={{ opacity }}
+				style={{ opacity, cursor }}
 			>
 				<div className='task-title'>{title}</div>
 

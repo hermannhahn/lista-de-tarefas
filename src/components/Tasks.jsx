@@ -1,4 +1,3 @@
-import update from 'immutability-helper';
 import { useState, useCallback } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -13,7 +12,8 @@ const Tasks = () => {
 	const savedTasks = json ? JSON.parse(json) : [];
 	const [tasks, setTasks] = useState(savedTasks);
 
-	const saveTask = (newTasks) => {
+	const saveTasks = (newTasks) => {
+		setTasks(newTasks);
 		const data = JSON.stringify(newTasks);
 		localStorage.setItem('tasks', data);
 	};
@@ -25,8 +25,7 @@ const Tasks = () => {
 			title: e.target.title.value,
 			completed: false,
 		};
-		setTasks([...tasks, newTask]);
-		saveTask([...tasks, newTask]);
+		saveTasks([...tasks, newTask]);
 		e.target.title.value = '';
 	};
 
@@ -43,8 +42,7 @@ const Tasks = () => {
 					return task;
 				}
 			});
-			setTasks(updatedStatus);
-			saveTask(updatedStatus);
+			saveTasks(updatedStatus);
 		},
 		[tasks]
 	);
@@ -52,26 +50,26 @@ const Tasks = () => {
 	const deleteTask = useCallback(
 		(taskid) => {
 			const filteredTasks = tasks.filter((task) => task.id !== taskid);
-			setTasks(filteredTasks);
-			saveTask(filteredTasks);
+			saveTasks(filteredTasks);
 		},
 		[tasks]
 	);
 
-	const moveTask = useCallback((dragIndex, hoverIndex) => {
-		setTasks((prevTasks) =>
-			update(prevTasks, {
-				$splice: [
-					[dragIndex, 1],
-					[hoverIndex, 0, prevTasks[dragIndex]],
-				],
-			})
-		);
-	}, []);
+	const moveTask = useCallback(
+		(dragIndex, hoverIndex) => {
+			const newTasks = tasks.slice();
+			newTasks.splice(
+				hoverIndex < 0 ? newTasks.length + hoverIndex : hoverIndex,
+				0,
+				newTasks.splice(dragIndex, 1)[0]
+			);
+			saveTasks(newTasks);
+		},
+		[tasks]
+	);
 
 	const renderTask = useCallback(
 		(task, index) => {
-			saveTask(tasks);
 			return (
 				<Task
 					key={task.id}
@@ -85,7 +83,7 @@ const Tasks = () => {
 				/>
 			);
 		},
-		[tasks, changeStatus, deleteTask, moveTask]
+		[changeStatus, deleteTask, moveTask]
 	);
 	return (
 		<>
