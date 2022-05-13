@@ -78,27 +78,16 @@ const Task = ({
 	return (
 		<>
 			<div
-				className='task-div'
+				className={completed ? 'task-div-completed' : 'task-div'}
 				type='TASK'
 				id={id}
-				draggable='true'
 				ref={ref}
 				data-handler-id={handlerId}
-				style={
-					completed
-						? {
-								borderTop: '3px solid chartreuse',
-								paddingTop: '12px',
-						  }
-						: { opacity }
-				}
+				style={{ opacity }}
 			>
 				<div className='task-title'>{title}</div>
 
 				<div className='buttons-container'>
-					<IconButton title='Arrastar' sx={{ cursor: 'move' }}>
-						<DragHandleIcon />
-					</IconButton>
 					<IconButton
 						color={completed ? 'success' : 'primary'}
 						title={completed ? 'Restaurar' : 'Finalizar'}

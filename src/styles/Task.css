@@ -14,6 +14,24 @@
 	background-color: rgba(231, 231, 231, 0.89);
 }
 
+.task-div-completed {
+	background-color: rgb(231, 231, 231);
+	margin: 8px 0;
+	padding: 15px 20px;
+	display: flex;
+	border-radius: 5px;
+	justify-content: space-between;
+	color: #282c34;
+	align-items: center;
+	text-shadow: #282c34;
+	border-top: 3px solid chartreuse;
+	padding-top: 12px;
+}
+
+.task-div-completed:hover {
+	background-color: rgba(231, 231, 231, 0.89);
+}
+
 .drag-task {
 	cursor: move;
 	border: none;
