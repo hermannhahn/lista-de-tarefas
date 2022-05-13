@@ -3,11 +3,14 @@ import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import '../styles/Header.css';
 
-const Header = ({ darkmode, handleChange }) => {
+const Header = ({ darkmode, handleMode }) => {
 	return (
 		<>
 			<div className='header'>
-				<div id='title' className='title'>
+				<div
+					className='title'
+					style={darkmode ? { color: 'white' } : { color: 'black' }}
+				>
 					<h2>Lista de Tarefas</h2>
 				</div>
 				<div className='icon'>
@@ -18,7 +21,7 @@ const Header = ({ darkmode, handleChange }) => {
 				<div className='darkmode-switch'>
 					<Switch
 						checked={darkmode}
-						onChange={handleChange}
+						onChange={handleMode}
 						inputProps={{ 'aria-label': 'controlled' }}
 					/>
 				</div>

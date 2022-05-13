@@ -10,28 +10,23 @@ const title = document.getElementsByTagName('title')[0];
 title.innerHTML = CONSTANTS.PAGE_TITLE;
 
 const App = () => {
-	const [darkmode, setDarkMode] = useState(false);
-	const handleChange = () => {
-		setDarkMode(!darkmode);
-		const input = document.getElementById('add-task-input');
-		if (!darkmode) {
-			document.body.style.backgroundColor = 'black';
-			document.getElementById('title').style.color = 'white';
-			input.style.color = 'black';
-			input.style.backgroundColor = 'white';
-		} else {
-			document.body.style.backgroundColor = 'white';
-			document.getElementById('title').style.color = 'black';
-			input.style.color = 'rgb(49, 49, 49)';
-			input.style.backgroundColor = 'rgba(224, 224, 224, 0.89)';
-		}
-	};
+	const pref = localStorage.getItem('pref');
+	const savedPref = pref ? JSON.parse(pref) : false;
+	const [darkmode, setDarkMode] = useState(savedPref);
+	darkmode
+		? (document.body.style.backgroundColor = 'black')
+		: (document.body.style.backgroundColor = 'whitesmoke');
 
+	const handleMode = () => {
+		const data = JSON.stringify(!darkmode);
+		localStorage.setItem('pref', data);
+		setDarkMode(!darkmode);
+	};
 	return (
 		<>
 			<div>
 				<Container maxWidth='sm'>
-					<Header darkmode={darkmode} handleChange={handleChange} />
+					<Header darkmode={darkmode} handleMode={handleMode} />
 					<Tasks />
 				</Container>
 			</div>

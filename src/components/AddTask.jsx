@@ -2,6 +2,9 @@ import '../styles/AddTask.css';
 import Button from '@mui/material/Button';
 
 const AddTask = ({ addTask }) => {
+	const pref = localStorage.getItem('pref');
+	const darkmode = pref ? JSON.parse(pref) : false;
+
 	return (
 		<>
 			<div className='add-task-container'>
@@ -12,6 +15,11 @@ const AddTask = ({ addTask }) => {
 						type='text'
 						name='title'
 						placeholder='Adicione uma tarefa...'
+						style={
+							darkmode
+								? { backgroundColor: 'whitesmoke' }
+								: { backgroundColor: '#e0e0e0e3' }
+						}
 					/>
 					<div className='add-task-button-container'>
 						<Button
