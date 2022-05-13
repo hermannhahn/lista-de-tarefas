@@ -1,5 +1,5 @@
 import update from 'immutability-helper';
-import React, { useState, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
 import AddTask from './AddTask';

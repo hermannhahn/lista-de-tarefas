@@ -7,6 +7,7 @@ const AddTask = ({ addTask }) => {
 			<div className='add-task-container'>
 				<form className='add-task-form' onSubmit={addTask}>
 					<input
+						id='add-task-input'
 						className='add-task-input'
 						type='text'
 						name='title'

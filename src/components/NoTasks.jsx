@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/Task.css';
+import '../styles/NoTask.css';
 
 const NoTasks = ({ total }) => {
 	if (total < 1) {
