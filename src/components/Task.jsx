@@ -5,7 +5,6 @@ import { ItemTypes } from '../constants/ItemTypes.js';
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 import AddDone from '@mui/icons-material/Done';
-import DragHandleIcon from '@mui/icons-material/DragHandle';
 import '../styles/Task.css';
 
 const Task = ({
