@@ -3,6 +3,7 @@ import { useDrag, useDrop } from 'react-dnd';
 import { ItemTypes } from '../constants/ItemTypes.js';
 
 import IconButton from '@mui/material/IconButton';
+import DragHandleIcon from '@mui/icons-material/DragHandle';
 import DeleteIcon from '@mui/icons-material/Delete';
 import AddDone from '@mui/icons-material/Done';
 import '../styles/Task.css';
@@ -59,7 +60,7 @@ const Task = ({
 	});
 	drag(drop(ref));
 	const opacity = isDragging ? 0 : 1;
-	const cursor = isDragging ? 'grabbing' : 'grab';
+	let cursor = isDragging ? 'grabbing' : 'grab';
 	return (
 		<>
 			<div
@@ -77,6 +78,9 @@ const Task = ({
 				</div>
 
 				<div className='buttons-container'>
+					<IconButton title='Arrastar'>
+						<DragHandleIcon cursor='grab' />
+					</IconButton>
 					<IconButton
 						color={completed ? 'success' : 'primary'}
 						title={completed ? 'Restaurar' : 'Finalizar'}
