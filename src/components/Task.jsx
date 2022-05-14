@@ -64,13 +64,13 @@ const Task = ({
 		const taskdiv = document.getElementsByClassName('task-div');
 		if (taskdiv[0] && taskdiv[0].offsetWidth) {
 			if (taskdiv[0].offsetWidth >= 500) {
-				return 42;
+				return 40;
 			}
 			if (taskdiv[0].offsetWidth > 300 && taskdiv[0].offsetWidth < 500) {
-				return 23;
+				return 15;
 			}
 		}
-		return 15;
+		return 10;
 	};
 
 	const rTitle = () => {
