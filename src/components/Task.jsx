@@ -60,6 +60,16 @@ const Task = ({
 	drag(drop(ref));
 	const opacity = isDragging ? 0 : 1;
 	const cursor = isDragging ? 'grabbing' : 'grab';
+
+	const rTitle = () => {
+		const shortTitle = title.slice(0, 33);
+		if (title.length > 33) {
+			return shortTitle + ' ...';
+		} else {
+			return title;
+		}
+	};
+
 	return (
 		<>
 			<div
@@ -73,7 +83,7 @@ const Task = ({
 				style={{ opacity, cursor }}
 			>
 				<div id='task-title' className='task-title'>
-					{title}
+					{rTitle()}
 				</div>
 
 				<div className='buttons-container'>

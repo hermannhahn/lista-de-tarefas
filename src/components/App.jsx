@@ -6,6 +6,8 @@ import * as CONSTANTS from '../constants/Constants';
 import Header from './Header';
 import Tasks from './Tasks';
 
+import '../styles/App.css';
+
 const title = document.getElementsByTagName('title')[0];
 title.innerHTML = CONSTANTS.PAGE_TITLE;
 
@@ -24,12 +26,12 @@ const App = () => {
 	};
 	return (
 		<>
-			<div>
-				<Container maxWidth='sm'>
+			<Container maxWidth='sm'>
+				<div className='app'>
 					<Header darkmode={darkmode} handleMode={handleMode} />
 					<Tasks />
-				</Container>
-			</div>
+				</div>
+			</Container>
 		</>
 	);
 };
