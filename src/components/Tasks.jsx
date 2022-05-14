@@ -87,12 +87,10 @@ const Tasks = () => {
 	);
 	return (
 		<>
-			<div className='container'>
-				<AddTask addTask={addTask} />
-				<div className='tasks-container'>
-					<NoTasks total={tasks.length} />
-					{tasks.map((task, i) => renderTask(task, i))}
-				</div>
+			<AddTask addTask={addTask} />
+			<div className='tasks-container'>
+				<NoTasks total={tasks.length} />
+				{tasks.map((task, i) => renderTask(task, i))}
 			</div>
 		</>
 	);

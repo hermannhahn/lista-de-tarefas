@@ -27,7 +27,7 @@ const App = () => {
 	return (
 		<>
 			<Container maxWidth='sm'>
-				<div className='app'>
+				<div className='container'>
 					<Header darkmode={darkmode} handleMode={handleMode} />
 					<Tasks />
 				</div>

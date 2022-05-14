@@ -60,10 +60,22 @@ const Task = ({
 	drag(drop(ref));
 	const opacity = isDragging ? 0 : 1;
 	const cursor = isDragging ? 'grabbing' : 'grab';
+	const titleWidth = () => {
+		const taskdiv = document.getElementsByClassName('task-div');
+		if (taskdiv[0] && taskdiv[0].offsetWidth) {
+			if (taskdiv[0].offsetWidth >= 500) {
+				return 42;
+			}
+			if (taskdiv[0].offsetWidth > 300 && taskdiv[0].offsetWidth < 500) {
+				return 23;
+			}
+		}
+		return 15;
+	};
 
 	const rTitle = () => {
-		const shortTitle = title.slice(0, 33);
-		if (title.length > 33) {
+		const shortTitle = title.slice(0, titleWidth());
+		if (title.length > titleWidth()) {
 			return shortTitle + ' ...';
 		} else {
 			return title;
