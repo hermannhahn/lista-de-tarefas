@@ -50,25 +50,5 @@
 .task-title {
 	font-weight: bold;
 	cursor: pointer;
-}
-
-.task-desc-title {
-	margin-top: 30px;
-	flex: auto;
-	width: 100%;
-	text-align: left;
-	color: #eee;
-	font-size: 14px;
-}
-
-.task-description {
-	margin: 30px auto;
-	margin-top: -8px;
-	overflow: auto;
-	background-color: #282c34;
-	border: 2px dashed #eeeeee;
-	border-top: none;
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
-	padding: 30px;
+	overflow: hidden;
 }

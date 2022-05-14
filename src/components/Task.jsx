@@ -60,28 +60,6 @@ const Task = ({
 	drag(drop(ref));
 	const opacity = isDragging ? 0 : 1;
 	const cursor = isDragging ? 'grabbing' : 'grab';
-	const titleWidth = () => {
-		const taskdiv = document.getElementsByClassName('task-div');
-		if (taskdiv[0] && taskdiv[0].offsetWidth) {
-			if (taskdiv[0].offsetWidth >= 500) {
-				return 40;
-			}
-			if (taskdiv[0].offsetWidth > 300 && taskdiv[0].offsetWidth < 500) {
-				return 15;
-			}
-		}
-		return 10;
-	};
-
-	const rTitle = () => {
-		const shortTitle = title.slice(0, titleWidth());
-		if (title.length > titleWidth()) {
-			return shortTitle + ' ...';
-		} else {
-			return title;
-		}
-	};
-
 	return (
 		<>
 			<div
@@ -95,7 +73,7 @@ const Task = ({
 				style={{ opacity, cursor }}
 			>
 				<div id='task-title' className='task-title'>
-					{rTitle()}
+					{title}
 				</div>
 
 				<div className='buttons-container'>
