@@ -46,6 +46,7 @@
 	cursor: pointer;
 	border: none;
 }
+
 .add-task-button:hover {
 	background-color: rgb(67, 201, 49);
 	color: #eee;
