@@ -60,17 +60,43 @@ const Task = ({
 	drag(drop(ref));
 	const opacity = isDragging ? 0 : 1;
 	const cursor = isDragging ? 'grabbing' : 'grab';
+	const titleWidth = () => {
+		const taskdiv = document.getElementsByClassName('task-div');
+		if (taskdiv[0] && taskdiv[0].offsetWidth) {
+			console.log(taskdiv[0].offsetWidth);
+			if (taskdiv[0].offsetWidth > 500) {
+				return 40;
+			} else {
+				return 30;
+			}
+		}
+		return 35;
+	};
+	const rTitle = title.slice(0, titleWidth());
+	const ret = () => {
+		if (title.length > titleWidth()) {
+			return ' ...';
+		} else {
+			return '';
+		}
+	};
+
 	return (
 		<>
 			<div
 				className={completed ? 'task-div-completed' : 'task-div'}
 				type='TASK'
 				id={id}
+				title={title}
 				ref={ref}
+				draggable={true}
 				data-handler-id={handlerId}
 				style={{ opacity, cursor }}
 			>
-				<div className='task-title'>{title}</div>
+				<div id='task-title' className='task-title'>
+					{rTitle}
+					{ret()}
+				</div>
 
 				<div className='buttons-container'>
 					<IconButton

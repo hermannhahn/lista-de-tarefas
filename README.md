@@ -11,4 +11,3 @@ Lista de tarefas simples em React.
 Este é um projeto de lista de tarefas em React, mas pode ser alterado para outras finalidades.
 
 Nele você pode adicionar novas tarefas, marcar como finalizadas, apagar tarefas e reordenar arrastando as tarefas.
-As informações estão sendo salvas em "localStorage".
